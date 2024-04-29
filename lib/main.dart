@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:untitled4/product.dart';
+import 'package:untitled4/shope.dart';
 
 import 'bottombar.dart';
 import 'home.dart';
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Mainpage(),
+      home: Products(),
     );
   }
 }
