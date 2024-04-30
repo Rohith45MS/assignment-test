@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:untitled4/shope.dart';
 
 class Products extends StatefulWidget {
   const Products({super.key});
@@ -33,10 +34,16 @@ class _ProductsState extends State<Products> {
                 children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0,left: 20),
-                  child: Icon(Icons.arrow_back,
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context)=>Dealoftheday()));
+                    },
+                    child: Icon(Icons.arrow_back,
                size: 24,
               color: Color(0xFFB8B8B8),
           ),
+                  ),
                 ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20.0,top: 20,left: 260),
@@ -99,7 +106,7 @@ class _ProductsState extends State<Products> {
 
               Container(
                 width: 360,
-                height: 1200,
+                height: 300,
                 decoration: ShapeDecoration(
                   color: Color(0xFFF6F6F6),
                   shape: RoundedRectangleBorder(
@@ -241,6 +248,113 @@ class _ProductsState extends State<Products> {
                             fontWeight: FontWeight.w500,
                             height: 0,
                         ),
+                      ),
+                    ),
+
+                    Positioned(
+                      top: 140,
+                      left: 20,
+                      child: ElevatedButton(
+                          onPressed: (){},
+                          child: Text("7",
+                              style: TextStyle(
+                                  color: Colors.black45
+                              )
+                          ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFFF6F6F6),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 140,
+                      left: 100,
+                      child: ElevatedButton(
+                        onPressed: (){},
+                        child: Text("8",
+                            style: TextStyle(
+                                color: Colors.black45
+                            )),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFFF6F6F6),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 140,
+                      left: 180,
+                      child: ElevatedButton(
+                        onPressed: (){},
+                        child: Text("9",
+                            style: TextStyle(
+                                color: Colors.black45
+                            )
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFFF6F6F6),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 140,
+                      left: 260,
+                      child: ElevatedButton(
+                        onPressed: (){},
+                        child: Text("10",style: TextStyle(
+                          color: Colors.black45
+                        ),),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFFF6F6F6),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 220,
+                      left: 30,
+                      child: Row(
+                        children: [
+                          ElevatedButton(
+                            onPressed: (){},
+                            child: Text("Wishlist",style: TextStyle(
+                                color: Colors.black
+                            ),),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xFFE0DFDF),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                                minimumSize: Size(160, 56)
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: ElevatedButton(
+                              onPressed: (){},
+                              child: Text("Add to bag",style: TextStyle(
+                                  color: Colors.white
+                              ),),
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Color(0xFFF61502),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  minimumSize: Size(160, 56)
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
 

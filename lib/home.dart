@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled4/shope.dart';
 
 
 class homepage extends StatefulWidget {
@@ -709,7 +710,10 @@ class _homepageState extends State<homepage> {
 
               Padding(
                 padding: const EdgeInsets.only(top: 24.0,right: 20,left: 80),
-                child: TextButton(onPressed: (){},
+                child: TextButton(onPressed: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>Dealoftheday()));
+                },
                   child: Text(
                     'View all',
                     style: TextStyle(

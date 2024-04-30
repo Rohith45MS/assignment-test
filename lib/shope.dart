@@ -1,4 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:untitled4/product.dart';
+
+import 'Home.dart';
 
 class Dealoftheday extends StatefulWidget {
   const Dealoftheday({super.key});
@@ -8,14 +14,25 @@ class Dealoftheday extends StatefulWidget {
 }
 
 class _DealofthedayState extends State<Dealoftheday> {
+
   @override
   Widget build(BuildContext context) {
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async{
+      if(Platform.isAndroid){
+        await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+      }
+    });
+
     return Container(
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
             leading: GestureDetector(
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>homepage()));
+              },
               child: Icon(Icons.arrow_back,
                 size: 24,
                 color: Color(0xFFB8B8B8),
@@ -136,74 +153,80 @@ class _DealofthedayState extends State<Dealoftheday> {
                               ),
                             ),
                           ),
-                          child: Stack(
-                            children: [
-                              Container(
-                                child: Image.asset('asset/image/2.png'),
-                              ),
-                              Positioned(
-                                left: 8,
-                                top: 170,
-                                child: Text(
-                                  'RedTape Mens Black \n''Walking Shoes ',
-                                  style: TextStyle(
-                                    color: Color(0xFF1E1E1E),
-                                    fontSize: 14,
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w500,
-                                    height: 0,
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context)=>Products()));
+                            },
+                            child: Stack(
+                              children: [
+                                Container(
+                                  child: Image.asset('asset/image/2.png'),
+                                ),
+                                Positioned(
+                                  left: 8,
+                                  top: 170,
+                                  child: Text(
+                                    'RedTape Mens Black \n''Walking Shoes ',
+                                    style: TextStyle(
+                                      color: Color(0xFF1E1E1E),
+                                      fontSize: 14,
+                                      fontFamily: 'Lato',
+                                      fontWeight: FontWeight.w500,
+                                      height: 0,
+                                    ),
                                   ),
                                 ),
-                              ),
 
-                              Positioned(
-                                left: 8,
-                                top: 209,
-                                child: Text(
-                                  '₹ 999',
-                                  style: TextStyle(
-                                    color: Color(0xFF1E1E1E),
-                                    fontSize: 14,
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w400,
-                                    height: 0,
+                                Positioned(
+                                  left: 8,
+                                  top: 209,
+                                  child: Text(
+                                    '₹ 999',
+                                    style: TextStyle(
+                                      color: Color(0xFF1E1E1E),
+                                      fontSize: 14,
+                                      fontFamily: 'Lato',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0,
+                                    ),
                                   ),
                                 ),
-                              ),
 
-                              Positioned(
-                                top: 212,
-                                left: 60,
-                                child: Text(
-                                  '15%off',
-                                  style: TextStyle(
-                                    color: Color(0xFFF8312F),
-                                    fontSize: 10,
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w400,
-                                    height: 0,
+                                Positioned(
+                                  top: 212,
+                                  left: 60,
+                                  child: Text(
+                                    '15%off',
+                                    style: TextStyle(
+                                      color: Color(0xFFF8312F),
+                                      fontSize: 10,
+                                      fontFamily: 'Lato',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0,
+                                    ),
                                   ),
                                 ),
-                              ),
 
-                              Positioned(
-                                right: 10,
-                                top: 188,
-                                child: Icon(Icons.favorite_border,
-                                  size: 16,
-                                  color: Color(0xFFB8B8B8),
+                                Positioned(
+                                  right: 10,
+                                  top: 188,
+                                  child: Icon(Icons.favorite_border,
+                                    size: 16,
+                                    color: Color(0xFFB8B8B8),
+                                  ),
                                 ),
-                              ),
 
-                              Positioned(
-                                right: 8,
-                                top: 210,
-                                child: Icon(Icons.add_shopping_cart,
-                                  size: 24,
-                                  color: Color(0xFFB8B8B8),
+                                Positioned(
+                                  right: 8,
+                                  top: 210,
+                                  child: Icon(Icons.add_shopping_cart,
+                                    size: 24,
+                                    color: Color(0xFFB8B8B8),
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           )
                       ),
                     ),
